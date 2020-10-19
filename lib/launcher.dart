@@ -6,6 +6,7 @@ import 'package:flutter_app/day1.dart';
 import 'package:flutter_app/day7.dart';
 
 import 'day2.dart';
+import 'day3.dart';
 
 class LaucherApp extends StatelessWidget {
   @override
@@ -35,7 +36,8 @@ class _LauncherApp extends StatelessWidget {
   //初始化列表数据
   List<Item> _initData() {
     items.add(Item(1, "容器组件Container", MyApp()));
-    items.add(Item(1, "图片组件-网络图片", ImageApp()));
+    items.add(Item(2, "图片组件-网络图片Image.network", ImageApp()));
+    items.add(Item(3, "文本组件Text", TextApp()));
     return items;
   }
 
