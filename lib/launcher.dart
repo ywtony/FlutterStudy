@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/day1.dart';
 import 'package:flutter_app/day7.dart';
 
+import 'day2.dart';
+
 class LaucherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,8 @@ class Item {
   final int id;
   final String name;
   final Widget widget;
-  Item(this.id, this.name,this.widget);
+
+  Item(this.id, this.name, this.widget);
 }
 
 class _LauncherApp extends StatelessWidget {
@@ -31,7 +34,8 @@ class _LauncherApp extends StatelessWidget {
 
   //初始化列表数据
   List<Item> _initData() {
-    items.add(Item(1, "容器组件Container",MyApp()));
+    items.add(Item(1, "容器组件Container", MyApp()));
+    items.add(Item(1, "图片组件-网络图片", ImageApp()));
     return items;
   }
 
@@ -48,8 +52,8 @@ class _LauncherApp extends StatelessWidget {
             title: Text(items[index].name),
             //ListTile点击事件
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => items[index].widget));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => items[index].widget));
             },
           );
         },
