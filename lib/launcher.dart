@@ -1,8 +1,8 @@
 //Flutter程序的入口
-import 'dart:collection';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/day1.dart';
 import 'package:flutter_app/day7.dart';
 
 class LaucherApp extends StatelessWidget {
@@ -18,8 +18,8 @@ class LaucherApp extends StatelessWidget {
 class Item {
   final int id;
   final String name;
-
-  Item(this.id, this.name);
+  final Widget widget;
+  Item(this.id, this.name,this.widget);
 }
 
 class _LauncherApp extends StatelessWidget {
@@ -31,7 +31,7 @@ class _LauncherApp extends StatelessWidget {
 
   //初始化列表数据
   List<Item> _initData() {
-    items.add(Item(1, "容器组件Container"));
+    items.add(Item(1, "容器组件Container",MyApp()));
     return items;
   }
 
@@ -48,7 +48,8 @@ class _LauncherApp extends StatelessWidget {
             title: Text(items[index].name),
             //ListTile点击事件
             onTap: () {
-             // Navigator.push(context, MaterialPageRoute(builder: ()=>));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => items[index].widget));
             },
           );
         },
