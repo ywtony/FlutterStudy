@@ -19,7 +19,8 @@ import 'day7.dart';
 import 'day8.dart';
 import 'day9.dart';
 import 'day18.dart';
+import 'launcher.dart';
 
 void main() {
-  runApp(FontAnimation());
+  runApp(LaucherApp());
 }
